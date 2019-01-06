@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: zaxscd1
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    logging:
+      driver: none
+    volumes:
+      - ./.mysql:/var/lib/mysql
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    logging:
+      driver: none
